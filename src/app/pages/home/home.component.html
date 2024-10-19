@@ -1,0 +1,43 @@
+<ion-content>
+  <div class="home-container">
+    <h2>Bienvenido a la Página Principal</h2>
+
+    <!-- Usar encadenamiento opcional para evitar el error de objeto nulo -->
+    <p *ngIf="usuarioLoggeado">
+      Hola, {{ usuarioLoggeado.nombreUsuario }} ({{ usuarioLoggeado.rol }})
+    </p>
+
+    <!-- Panel Docente -->
+    <div *ngIf="usuarioLoggeado?.rol === 'docente'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Panel Docente</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="full" (click)="irADocente()"
+            >Ver Opciones Docente</ion-button
+          >
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- Panel Alumno -->
+    <div *ngIf="usuarioLoggeado?.rol === 'alumno'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Panel Alumno</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="full" (click)="irAAlumno()"
+            >Ver Opciones Alumno</ion-button
+          >
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- Botón de Cerrar Sesión -->
+    <ion-button expand="full" color="danger" (click)="logout()"
+      >Cerrar Sesión</ion-button
+    >
+  </div>
+</ion-content>

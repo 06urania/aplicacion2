@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="docente-container">
+    <h2>Bienvenido, {{ usuarioLoggeado?.nombreUsuario }} (Docente)</h2>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Gestión de Asignaturas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="full" (click)="gestionarAsignaturas()"
+          >Ver Asignaturas</ion-button
+        >
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Registro de Asistencia</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="full" (click)="verAsistencia()"
+          >Ver Asistencia</ion-button
+        >
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="full" color="danger" (click)="logout()"
+      >Cerrar Sesión</ion-button
+    >
+  </div>
+</ion-content>
