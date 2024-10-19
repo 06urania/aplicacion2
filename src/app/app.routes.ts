@@ -5,6 +5,8 @@ import { LoginComponent } from 'src/app/pages/login/login.component'; // Importa
 import { DocenteComponent } from 'src/app/pages/docente/docente.component'; // Importa el componente Docente
 import { AlumnoComponent } from 'src/app/pages/alumno/alumno.component'; // Importa el componente Alumno
 
+console.log('Configuración de rutas cargada'); // Verificación
+
 export const routes: Routes = [
   {
     path: '',
@@ -13,26 +15,26 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent, // Cargar el componente Home directamente
-  },
-  {
-    path: 'registrar',
-    component: RegistrarComponent, // Cargar el componente Registrar directamente
+    component: HomeComponent,
   },
   {
     path: 'login',
-    component: LoginComponent, // Cargar el componente Login directamente
+    component: LoginComponent,
+  },
+  {
+    path: 'registrar',
+    component: RegistrarComponent,
   },
   {
     path: 'docente-home',
-    component: DocenteComponent, // Cargar el componente Docente directamente
+    component: DocenteComponent,
   },
   {
     path: 'alumno-home',
-    component: AlumnoComponent, // Cargar el componente Alumno directamente
+    component: AlumnoComponent,
   },
   {
-    path: '**', // Ruta comodín que captura todas las rutas no definidas
-    redirectTo: 'home', // Redirige a la ruta 'home'
+    path: '**',
+    redirectTo: 'home',
   },
 ];

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Usuario } from 'src/app/models/UsuarioAPI';
@@ -17,6 +17,7 @@ export class AlumnoComponent implements OnInit {
   usuarioLoggeado: Usuario | null = null;
   ngOnInit() {
     this.usuarioLoggeado = this.authService.getLoggedInUser();
+    console.log('Ruta activa:', this.router.url);
   }
 
   verAsignaturas() {
